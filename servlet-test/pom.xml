@@ -1,0 +1,25 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>servlet-test-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>servlet-test-parent/pom.xml</relativePath>
+    </parent>
+    <artifactId>servlet-test</artifactId>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!-- parent项目负责公共依赖管理和版本仲裁 -->
+        <module>servlet-test-parent</module>
+        <module>servlet-test-tomcat-8-nio</module>
+        <module>servlet-test-tomcat-8-apr</module>
+        <module>servlet-test-tomcat-8.5-nio</module>
+        <module>servlet-test-jetty</module>
+        <module>servlet-test-undertow</module>
+        <module>servlet-test-undertow2</module>
+    </modules>
+</project>

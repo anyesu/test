@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+
+<!-- status用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，你会看到log4j2内部各种详细输出。 -->
+<!-- monitorinterval用于指定log4j自动重新配置的监测间隔时间，单位是s,最小是5s -->
+<configuration status="OFF" monitorinterval="10">
+    <!-- 变量配置 -->
+    <appenders>
+        <!--这个输出控制台的配置-->
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <!-- 设置级别 -->
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} - %-7r [%t] %-5p %c:%L : %m%n"/>
+        </Console>
+    </appenders>
+    <loggers>
+        <AsyncLogger name="org.springframework" level="error"/>
+        <!--<AsyncLogger name="org.apache.commons" level="error"/>-->
+
+        <AsyncRoot level="all" includeLocation="true">
+            <appender-ref ref="CONSOLE"/>
+        </AsyncRoot>
+    </loggers>
+</configuration>
