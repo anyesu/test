@@ -1,0 +1,11 @@
+version: '3'
+services:
+  api:
+    build: '.'
+    privileged: false
+    restart: always
+    container_name: "api"
+    hostname: "api"
+    ports:
+      - ${SERVER_PORT}:8080
+    command: java -jar -Djava.security.egd=file:/dev/./urandom $JAVA_OPTS /app.jar

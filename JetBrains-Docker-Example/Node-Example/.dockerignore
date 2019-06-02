@@ -1,0 +1,5 @@
+# ignore all files
+*
+# exclude dist and nginx.conf
+!dist
+!nginx.conf.template
